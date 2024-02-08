@@ -1,0 +1,2 @@
+const e=require("events");module.exports=class extends e{constructor(){super(),this.buffer=""}parse(e){let t,s;for(this.buffer+=e.toString("utf8");(t=this.buffer.indexOf("\r\n"))>-1;)if(s=this.buffer.slice(0,t),this.buffer=this.buffer.slice(t+2),s.length>0)try{s=JSON.parse(s),this.emit(s.event||"data",s)}catch(e){e.source=s,this.emit("error",e)}else this.emit("ping")}};
+//# sourceMappingURL=stream.modern.js.map
